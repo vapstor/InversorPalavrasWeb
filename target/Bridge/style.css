@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/05/2018, 12:30:11
+    Author     : vapstor
+*/
+
+.inputTexto{
+    width: 91%;
+    border-radius: 3px;
+    float: left;
+    padding: 6px;
+    margin-bottom: 1.5%;
+    border: 0.5px solid background;
+}
+.btn-enviar {
+    margin-left: 1.5%;
+}
+
+.w100{
+    width: 100%;
+}
+
+.hide {
+    display: none!important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /*color: red;*/
+    opacity: 0.5; 
+    font-style: italic;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+}
+
+
+.marginLados0 {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}

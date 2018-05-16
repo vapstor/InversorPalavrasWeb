@@ -27,43 +27,24 @@ public class TextoDAO extends GenericDAO {
     }
     
     public List retornaTextos() throws SQLException {
+        String select = "SELECT * FROM Palavras";
         List listaTextos = new ArrayList();
-        String select = "SELECT PalavraInserida FROM Palavras";
+        
         
         try (PreparedStatement stmt = getConnection().prepareStatement(select)) {
             
             ResultSet rs = stmt.executeQuery();
             
             while (rs.next()) {
-                Texto texto = new Texto(
-                        rs.getString("PalavraInserida")
+                Texto textRecord = new Texto(
+                        rs.getString("Texto"),
+                        rs.getString("TextoInvertido")
                 );
-                listaTextos.add(texto);
+                listaTextos.add(textRecord);
             }
             rs.close();
             stmt.close();
         }
         return listaTextos;    
     }
-    
-    public List retornaTextosInvertidos() throws SQLException {
-        List listaTextosInvertidos = new ArrayList();
-        String select = "SELECT PalavraInvertida FROM Palavras";
-        
-        try (PreparedStatement stmt = getConnection().prepareStatement(select)) {
-            
-            ResultSet rs = stmt.executeQuery();
-            
-            while (rs.next()) {
-                Texto texto = new Texto(
-                        rs.getString("PalavraInvertida")
-                );
-                listaTextosInvertidos.add(texto);
-            }
-            rs.close();
-            stmt.close();
-        }
-        return listaTextosInvertidos;   
-    }
-    
 }

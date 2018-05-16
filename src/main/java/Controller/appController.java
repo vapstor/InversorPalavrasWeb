@@ -21,8 +21,8 @@ public class appController {
         
     }
     
-    public static Texto inverteString(String texto) {
-        Texto textoInvertido = new Texto("");
+    public static String inverteString(String texto) {
+        Texto textRecord = new Texto(texto, "");
         char[] arrayChar = texto.toCharArray();
         char[] arrayCharInvertido = new char[texto.toCharArray().length];
         int j = 0;
@@ -33,8 +33,9 @@ public class appController {
             j++;
         }
         
-        textoInvertido.setTexto(new String(arrayCharInvertido));
-        return textoInvertido;
+        textRecord.setTexto(texto);
+        textRecord.setTextoInvertido(new String(arrayCharInvertido));
+        return textRecord.getTextoInvertido();
     }
     
     public static void salvaTextoBD(String texto, String textoInvertido) throws SQLException, ClassNotFoundException {
@@ -42,7 +43,7 @@ public class appController {
         p.salvaTexto(texto, textoInvertido);
     }
     
-    public static List todasAsPalavras() throws SQLException, ClassNotFoundException {
+    public static List todosOsTextos() throws SQLException, ClassNotFoundException {
         TextoDAO p = new TextoDAO();
         return p.retornaTextos();
     }

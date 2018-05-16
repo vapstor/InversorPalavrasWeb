@@ -7,9 +7,10 @@ package Model;
 public class Texto {
     private String texto;
     private String textoInvertido;
-
-    public Texto(String texto) {
+    
+    public Texto(String texto, String textoInvertido) {
         this.texto = texto;
+        this.textoInvertido = textoInvertido;
     }
     
     public String getTexto() {
